@@ -23,12 +23,12 @@ class App extends Component {
       }
     });
 
-    const res = await  youtube.get('/comments', {
-      params :  {
-        q: term
-      }
-    });
-    console.log(res);
+    // const res = await  youtube.get('/comments', {
+    //   params :  {
+    //     q: term
+    //   }
+    // });
+    // console.log(res);
     this.setState({
       videos : response.data.items,
       selectedVideo: response.data.items[0],
