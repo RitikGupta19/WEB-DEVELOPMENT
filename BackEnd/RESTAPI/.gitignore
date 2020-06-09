@@ -3,11 +3,11 @@
 /bin/certificate.pem
 
 
-# .key
-# .csr
-# .pem
+.key
+.csr
+.pem
 
-.config.js
+/config.js
 # dependencies
 /node_modules
 /.pnp
