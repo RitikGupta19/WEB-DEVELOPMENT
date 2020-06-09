@@ -3,6 +3,8 @@
 /bin/private.key
 
 .key
+.csr
+.pem
 
 .config.js
 # dependencies
