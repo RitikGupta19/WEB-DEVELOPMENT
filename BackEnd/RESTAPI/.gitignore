@@ -3,9 +3,9 @@
 /bin/certificate.pem
 
 
-.key
-.csr
-.pem
+# .key
+# .csr
+# .pem
 
 .config.js
 # dependencies
