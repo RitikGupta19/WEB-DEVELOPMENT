@@ -13,12 +13,12 @@ const VideoDetail = ({ video }) => {
             <div className="ui embed">
                 <iframe title= "video player" src = {videoSrc} />
             </div><br />
-            <div class="ui list">
-                <div class="item">
-                <img class="ui avatar image" src={profile}  />
-                <div class="content">
-                <a class="header">{video.snippet.channelTitle}</a>
-                <div class="description">Last seen watching <a><b>Arrested Development</b></a> just now.</div>
+            <div className="ui list">
+                <div className="item">
+                <img className="ui avatar image" src={profile}  />
+                <div className="content">
+                <a className="header">{video.snippet.channelTitle}</a>
+                <div className="description">Last seen watching <a><b>Arrested Development</b></a> just now.</div>
                 </div>
             </div>
             </div><br />

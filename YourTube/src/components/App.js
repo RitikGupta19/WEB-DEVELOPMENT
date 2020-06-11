@@ -17,23 +17,27 @@ class App extends Component {
   }
 
   onTermSubmitHandler = async (term) => {
-    const response = await  youtube.get('/search', {
+    
+    const response = await youtube.get('/search', {
       params :  {
         q: term
       }
     });
-
-    // const res = await  youtube.get('/comments', {
-    //   params :  {
-    //     q: term
-    //   }
-    // });
-    // console.log(res);
+    console.log(response);
     this.setState({
       videos : response.data.items,
       selectedVideo: response.data.items[0],
-      //comments: ""
     });
+
+
+    const res = await youtube.get('/comments', {
+      params :  {
+        q: term,
+        id: response.data.items[0].id.videoId
+      }
+    });
+    console.log(res);
+   
   };
 
 
