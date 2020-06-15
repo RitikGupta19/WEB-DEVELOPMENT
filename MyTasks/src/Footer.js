@@ -6,7 +6,7 @@ const Footer = () => {
         <div className="footer jumbotron bg-dark text-white">
         <div className="container">
           <p className="lead">Task Manger By: <strong>Ritik Gupta </strong></p> 
-          <p className="lead">Made with<strong> React</strong></p>
+          <p className="lead">Made using<strong> React</strong></p>
         </div>
         </div>
         </div>

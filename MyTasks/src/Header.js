@@ -8,7 +8,7 @@ const Header = () => {
         <div className="container">
           <h1 className="display-4">MY TASKS</h1>
           <p className="lead">Manage your <strong>Daily Activities</strong>, 
-          become more <strong>Productive</strong> by keeping record of all your tasks.</p>
+          become more <strong>Productive</strong>, Keep record of all your tasks.</p>
           <p>{window.Date().slice(0,15)}</p>
         </div>
         </div>

@@ -6,8 +6,8 @@ const KEY = process.env.REACT_APP_KEY;
 export default axios.create({
     baseURL : 'https://www.googleapis.com/youtube/v3',
     params: {
-        part: 'snippet' ,
-        maxResults : 4,
+        part: 'snippe',
+        maxResults : 1,
         key: KEY
     }
 });

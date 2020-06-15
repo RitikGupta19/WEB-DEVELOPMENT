@@ -17,38 +17,24 @@ class App extends Component {
   }
 
   onTermSubmitHandler = async (term) => {
-    
     const response = await youtube.get('/search', {
       params :  {
         q: term
       }
-    });
-    console.log(response);
+    }); 
     this.setState({
       videos : response.data.items,
-      selectedVideo: response.data.items[0],
+      selectedVideo: response.data.items[0]
     });
-
-
-    const res = await youtube.get('/comments', {
-      params :  {
-        q: term,
-        id: response.data.items[0].id.videoId
-      }
-    });
-    console.log(res);
-   
   };
 
 
-  onVideoSelect = (video) => { 
-    console.log(video);
+  onVideoSelect = (video) => {
     this.setState({
       selectedVideo: video,
-      //comments: 
     });
   };
-
+  
   render() {
     return (
       <div className = "ui container">
@@ -65,7 +51,9 @@ class App extends Component {
         <div className = "ui grid">
           <div className = "ui row">
             <div className = "eleven wide column">
-              <VideoDetail video = {this.state.selectedVideo}/>
+              <VideoDetail 
+                video = {this.state.selectedVideo}
+                comments={this.state.comments}/>
             </div>
             <div className = "five wide column">
               <VideoList 
