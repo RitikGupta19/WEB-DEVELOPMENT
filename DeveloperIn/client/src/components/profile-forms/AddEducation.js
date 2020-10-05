@@ -7,47 +7,48 @@ const AddEducation = ({ addEducation, history }) => {
   const [formData, setFormData] = useState({
     school: "",
     degree: "",
-    fieldOfStudy: "",
+    fieldofstudy: "",
     from: "",
     to: "",
     current: false,
     description: "",
   });
 
-  const [toggleToDisabled, setToggleToDisabled] = useState(false);
+  const [toggleTo, setToggleTo] = useState(false);
   const {
     school,
     degree,
-    fieldOfStudy,
+    fieldofstudy,
     from,
     to,
     current,
     description,
   } = formData;
+
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
     <Fragment>
-      <h1 class='large text-primary'>Add An Experience</h1>
+      <h1 class='large text-primary'>Add Your Education</h1>
       <p class='lead'>
-        <i class='fas fa-code-branch'></i> Add any developer/programming
-        positions that you have had in the past
+        <i class='fas fa-code-branch'></i> Enter School or Bootcamp you have
+        attended
       </p>
       <small>* = required field</small>
       <form
         class='form'
         onSubmit={(e) => {
           e.preventDefault();
-          addExperience(formData, history);
+          addEducation(formData, history);
         }}>
         <div class='form-group'>
           <input
             type='text'
-            placeholder='* Job Title'
-            name='title'
-            value={title}
+            placeholder='* School or BootCamp'
+            name='school'
+            value={school}
             onChange={(e) => onChange(e)}
             required
           />
@@ -55,9 +56,9 @@ const AddEducation = ({ addEducation, history }) => {
         <div class='form-group'>
           <input
             type='text'
-            placeholder='* Company'
-            name='company'
-            value={company}
+            placeholder='* Degree or Certificate'
+            name='degree'
+            value={degree}
             onChange={(e) => onChange(e)}
             required
           />
@@ -65,10 +66,11 @@ const AddEducation = ({ addEducation, history }) => {
         <div class='form-group'>
           <input
             type='text'
-            placeholder='Location'
-            name='location'
-            value={location}
+            placeholder='Field of Study'
+            name='fieldofstudy'
+            value={fieldofstudy}
             onChange={(e) => onChange(e)}
+            required
           />
         </div>
         <div class='form-group'>
@@ -111,7 +113,7 @@ const AddEducation = ({ addEducation, history }) => {
             name='description'
             cols='30'
             rows='5'
-            placeholder='Job Description'
+            placeholder='Program Description'
             value={description}
             onChange={(e) => onChange(e)}></textarea>
         </div>
@@ -124,7 +126,7 @@ const AddEducation = ({ addEducation, history }) => {
   );
 };
 
-AddExperience.propTypes = {
+AddEducation.propTypes = {
   addEducation: PropTypes.func.isRequired,
 };
 
