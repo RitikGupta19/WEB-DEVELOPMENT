@@ -155,14 +155,14 @@ export const deleteEducation = (id) => async (dispatch) => {
 };
 
 // Delete Account and Profile
-export const deleteAccount = (history) => async (dispatch) => {
+export const deleteAccount = () => async (dispatch) => {
   if (window.confirm("Are you sure ? This can not be undone !")) {
     try {
       const res = await axios.delete(`/api/profile`);
       dispatch({ type: CLEAR_PROFILE });
-      dispatchEvent({ type: ACCOUNT_DELETED });
+      dispatch({ type: ACCOUNT_DELETED });
       dispatch(setAlert("Account Removed"));
-      history.push("/login");
+      //history.push("/login");
     } catch (err) {
       const errors = err.response.data.errors;
       if (errors) {
