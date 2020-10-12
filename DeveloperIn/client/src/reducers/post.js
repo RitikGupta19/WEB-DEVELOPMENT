@@ -3,11 +3,11 @@ import { GET_POSTS, POST_ERROR } from "../actions/types";
 const initialState = {
   posts: [],
   post: null,
-  loading: false,
+  loading: true,
   error: {}
 }
 
-export default funtion(state = initialState, action) {
+export default function (state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
     case GET_POSTS:
