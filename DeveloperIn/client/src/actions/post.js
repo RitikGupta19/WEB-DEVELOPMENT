@@ -92,8 +92,9 @@ export const addPosts = (formData) => async dispatch => {
 
 // Get a single Post
 export const getPost = (id) => async dispatch => {
+  console.log(id)
   try {
-    const res = await axios.gett(`/api/posts/${id}`);
+    const res = await axios.get(`/api/posts/${id}`);
     dispatch({
       type: GET_POST,
       payload: res.data

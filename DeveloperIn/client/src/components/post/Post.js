@@ -7,7 +7,6 @@ import PostItem from '../posts/PostItem';
 import { Link } from 'react-router-dom';
 
 const Post = ({getPost, post: {post, loading}, match}) => {
-  console.log(match)
   useEffect(() => {
     getPost(match.params.id);
   }, [])
