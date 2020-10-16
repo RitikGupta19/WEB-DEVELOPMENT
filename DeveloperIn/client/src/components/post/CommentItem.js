@@ -4,9 +4,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
 import { deleteComments } from '../../actions/post';
-import auth from '../../reducers/auth';
 
-const CommentItem = ({commentId, comment: {_id, name, text, avatar, user, date}, postId}, auth, deleteComments) => {
+const CommentItem = ({ commentId, comment: {_id, name, text, avatar, user, date}, postId , deleteComments, auth}) => {
   return (
     <div className="post bg-white p-1 my-1">
     <div>
@@ -25,8 +24,8 @@ const CommentItem = ({commentId, comment: {_id, name, text, avatar, user, date},
        <p className="post-date">
           Posted on <Moment format="YYYY/MM/DD">{date}</Moment>
       </p>
-      {console.log(auth.loading, "hi", auth.user._id)}
-      {!auth.loading && user === auth.user._id && (
+      {console.log(auth.loading, "hi", auth.user.user._id)}
+      {!auth.loading && user === auth.user.user._id && (
         <button onClick={(e) => deleteComments(postId, _id)} type="button" className="btn btn-danger">
           <i className="fas fa-times"></i>
         </button>
