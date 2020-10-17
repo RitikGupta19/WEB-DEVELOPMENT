@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from "react";
 import "./Form.css";
 import ReactDOM from "react-dom";
-import GoogleLogin from "react-google-login";
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -29,18 +28,6 @@ const Form = () => {
     }
   };
 
-  const responseGoogle = (response) => {
-    //console.log(response);
-  };
-
-  const onSuccess = (googleUser) => {
-    console.log("Logged in as: " + googleUser.getBasicProfile().getName());
-  };
-
-  const onFailure = (error) => {
-    console.log(error);
-  };
-
   return (
     <Fragment>
       <div className='card shadow-lg p-3 mb-5 bg-white rounded col-6 mx-auto'>
@@ -57,13 +44,12 @@ const Form = () => {
             <div className='col'>
               {/* Pass function call to Google Auth on button click*/}
               <div style={{ width: "50%" }} className='float-right'>
-                <GoogleLogin
-                  clientId='658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com'
-                  buttonText='Login'
-                  onSuccess={responseGoogle}
-                  onFailure={responseGoogle}
-                  cookiePolicy={"single_host_origin"}
-                />
+              <button type='submit' className='btn btn-light btn-block'>
+              <i
+                class='fa fa-google fa-1x'
+                aria-hidden='true'></i>
+              Sign Up with Google
+            </button>
               </div>
             </div>
             <div className='col'>
@@ -119,8 +105,8 @@ const Form = () => {
           </div>
           <p>
             By clicking Sign Up, you agree to our{" "}
-            <a href='https://github.com/kshivam654/'>Terms Of Use</a> and our{" "}
-            <a href='https://github.com/kshivam654/'>Privacy Policy.</a>
+            <a href=''>Terms Of Use</a> and our{" "}
+            <a href=''>Privacy Policy.</a>
           </p>
           <button type='submit' className='btn btn-dark btn-block'>
             Sign Up
