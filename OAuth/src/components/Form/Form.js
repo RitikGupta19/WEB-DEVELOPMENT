@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import Logo from "../Logo";
 import "./Form.css";
 
-const Form = ({history}) => {
+const Form = ({ history }) => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -26,15 +26,14 @@ const Form = ({history}) => {
       // Call to API
       console.log(formData);
       //If logged in successfull
-      if(true)
-        console.log("Redirecting")
-        return history.push("/loggedin");
+      if (true) console.log("Redirecting");
+      return history.push("/loggedin");
     }
   };
 
   return (
     <Fragment>
-    <Logo />
+      <Logo />
       <div className='card shadow-lg p-3 mb-5 bg-white rounded col-6 mx-auto'>
         <form onSubmit={(e) => onSubmit(e)}>
           <h3>
@@ -49,12 +48,10 @@ const Form = ({history}) => {
             <div className='col'>
               {/* Pass function call to Google Auth on button click*/}
               <div style={{ width: "50%" }} className='float-right'>
-              <button type='submit' className='btn btn-light btn-block'>
-              <i
-                class='fa fa-google fa-1x'
-                aria-hidden='true'></i>
-              Sign Up with Google
-            </button>
+                <button type='submit' className='btn btn-light btn-block'>
+                  <i class='fa fa-google fa-1x' aria-hidden='true'></i>
+                  Sign Up with Google
+                </button>
               </div>
             </div>
             <div className='col'>
@@ -113,11 +110,13 @@ const Form = ({history}) => {
             />
           </div>
           <p>
-            By clicking Sign Up, you agree to our{" "}
-            <a href=''>Terms Of Use</a> and our{" "}
-            <a href=''>Privacy Policy.</a>
+            By clicking Sign Up, you agree to our <a href=''>Terms Of Use</a>{" "}
+            and our <a href=''>Privacy Policy.</a>
           </p>
-          <button type='submit' className='btn btn-dark btn-block' onClick={(e) => onSubmit(e)}>
+          <button
+            type='submit'
+            className='btn btn-dark btn-block'
+            onClick={(e) => onSubmit(e)}>
             Sign Up
           </button>
         </form>
