@@ -1,8 +1,8 @@
 import React, { Fragment, useState } from "react";
+import Logo from "../Logo";
 import "./Form.css";
-import ReactDOM from "react-dom";
 
-const Form = () => {
+const Form = ({history}) => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -25,11 +25,16 @@ const Form = () => {
       // Handle Api Submission Here
       // Call to API
       console.log(formData);
+      //If logged in successfull
+      if(true)
+        console.log("Redirecting")
+        return history.push("/loggedin");
     }
   };
 
   return (
     <Fragment>
+    <Logo />
       <div className='card shadow-lg p-3 mb-5 bg-white rounded col-6 mx-auto'>
         <form onSubmit={(e) => onSubmit(e)}>
           <h3>
@@ -73,6 +78,7 @@ const Form = () => {
               placeholder='First Name'
               value={firstName}
               onChange={(e) => onChange(e)}
+              required
             />
             <br />
             <input
@@ -82,6 +88,7 @@ const Form = () => {
               placeholder='Last Name'
               value={lastName}
               onChange={(e) => onChange(e)}
+              required
             />
             <br />
             <input
@@ -91,6 +98,7 @@ const Form = () => {
               placeholder='Email'
               value={email}
               onChange={(e) => onChange(e)}
+              required
             />
             <br />
             <input
@@ -101,6 +109,7 @@ const Form = () => {
               minLength='6'
               value={password}
               onChange={(e) => onChange(e)}
+              required
             />
           </div>
           <p>
@@ -108,7 +117,7 @@ const Form = () => {
             <a href=''>Terms Of Use</a> and our{" "}
             <a href=''>Privacy Policy.</a>
           </p>
-          <button type='submit' className='btn btn-dark btn-block'>
+          <button type='submit' className='btn btn-dark btn-block' onClick={(e) => onSubmit(e)}>
             Sign Up
           </button>
         </form>
