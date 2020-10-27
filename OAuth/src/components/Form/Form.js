@@ -3,6 +3,7 @@ import Logo from "../Logo";
 import "./Form.css";
 import { GoogleLogin } from "react-google-login";
 import FacebookLogin from "react-facebook-login";
+import { facebookAppId, googleClientId } from "../../config";
 
 const Form = ({ history }) => {
   const [formData, setFormData] = useState({
@@ -60,7 +61,7 @@ const Form = ({ history }) => {
               {/* Pass function call to Google Auth on button click*/}
               <div style={{ width: "50%" }} className='float-right'>
                 <GoogleLogin
-                  clientId='254805877416-pv5ncolt12f77tgppt0vakr3h3gmcqmc.apps.googleusercontent.com'
+                  clientId={googleClientId}
                   buttonText='Login'
                   onSuccess={responseGoogle}
                   onFailure={responseGoogle}
@@ -72,10 +73,10 @@ const Form = ({ history }) => {
               {/* Pass function call to Facebook Auth on button click*/}
               <div style={{ width: "50%" }} className='float-left mx-auto'>
                 <FacebookLogin
-                  appId='1088597931155576'
+                  appId={facebookAppId}
                   autoLoad={true}
                   fields='name,email,picture'
-                  onClick={" "}
+                  onClick={""}
                   callback={responseFacebook}
                 />
               </div>
