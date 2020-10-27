@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import Logo from "../Logo";
 import "./Form.css";
+import { GoogleLogin } from "react-google-login";
 
 const Form = ({ history }) => {
   const [formData, setFormData] = useState({
@@ -18,7 +19,6 @@ const Form = ({ history }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    // Any filteratios here
     if (firstName === "" || email === "" || password === " ") {
       console.log("Please Enter complete details ");
     } else {
@@ -29,6 +29,12 @@ const Form = ({ history }) => {
       if (true) console.log("Redirecting");
       return history.push("/loggedin");
     }
+  };
+
+  const responseGoogle = (response) => {
+    console.log(response);
+    if (response.profileObj) return history.push("/loggedin");
+    else alert("Logine Failed");
   };
 
   return (
@@ -48,10 +54,13 @@ const Form = ({ history }) => {
             <div className='col'>
               {/* Pass function call to Google Auth on button click*/}
               <div style={{ width: "50%" }} className='float-right'>
-                <button type='submit' className='btn btn-light btn-block'>
-                  <i class='fa fa-google fa-1x' aria-hidden='true'></i>
-                  Sign Up with Google
-                </button>
+                <GoogleLogin
+                  clientId='254805877416-pv5ncolt12f77tgppt0vakr3h3gmcqmc.apps.googleusercontent.com'
+                  buttonText='Login'
+                  onSuccess={responseGoogle}
+                  onFailure={responseGoogle}
+                  cookiePolicy={"single_host_origin"}
+                />
               </div>
             </div>
             <div className='col'>

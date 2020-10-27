@@ -7,6 +7,7 @@ const LoggedIn = ({ history }) => {
   return (
     <div>
       You are logged in
+      <br />
       <button className='btn btn-primary' onClick={() => logout()}>
         Logout
       </button>
