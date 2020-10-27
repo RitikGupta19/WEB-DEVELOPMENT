@@ -41,6 +41,8 @@ const Form = ({ history }) => {
 
   const responseFacebook = (response) => {
     console.log(response);
+    if (response.accessToken) return history.push("/loggedin");
+    else alert("Login Failed");
   };
 
   return (
