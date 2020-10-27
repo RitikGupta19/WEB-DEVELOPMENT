@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import Logo from "../Logo";
 import "./Form.css";
 import { GoogleLogin } from "react-google-login";
+import FacebookLogin from "react-facebook-login";
 
 const Form = ({ history }) => {
   const [formData, setFormData] = useState({
@@ -37,6 +38,10 @@ const Form = ({ history }) => {
     else alert("Logine Failed");
   };
 
+  const responseFacebook = (response) => {
+    console.log(response);
+  };
+
   return (
     <Fragment>
       <Logo />
@@ -66,12 +71,13 @@ const Form = ({ history }) => {
             <div className='col'>
               {/* Pass function call to Facebook Auth on button click*/}
               <div style={{ width: "50%" }} className='float-left mx-auto'>
-                <button type='submit' className='btn btn-light btn-block'>
-                  <i
-                    class='fa fa-facebook-official fa-1x'
-                    aria-hidden='true'></i>
-                  Sign Up with Facebook
-                </button>
+                <FacebookLogin
+                  appId='1088597931155576'
+                  autoLoad={true}
+                  fields='name,email,picture'
+                  onClick={" "}
+                  callback={responseFacebook}
+                />
               </div>
             </div>
           </div>
@@ -135,3 +141,10 @@ const Form = ({ history }) => {
 };
 
 export default Form;
+
+// <button type='submit' className='btn btn-light btn-block'>
+//                   <i
+//                     class='fa fa-facebook-official fa-1x'
+//                     aria-hidden='true'></i>
+//                   Sign Up with Facebook
+//                 </button>
