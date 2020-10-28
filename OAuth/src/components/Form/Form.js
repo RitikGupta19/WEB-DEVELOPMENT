@@ -3,7 +3,8 @@ import Logo from "../Logo";
 import "./Form.css";
 import { GoogleLogin } from "react-google-login";
 import FacebookLogin from "react-facebook-login";
-import { facebookAppId, googleClientId } from "../../config";
+import GitHubLogin from "react-github-login";
+import { facebookAppId, githubClientId, googleClientId } from "../../config";
 
 const Form = ({ history }) => {
   const [formData, setFormData] = useState({
@@ -45,6 +46,13 @@ const Form = ({ history }) => {
     else alert("Login Failed");
   };
 
+  const onSuccess = (response) => {
+    console.log("success", response);
+    if (response.code) return history.push("/loggedin");
+    else alert("Logine Failed");
+  };
+  const onFailure = (response) => console.error("failure", response);
+
   return (
     <Fragment>
       <Logo />
@@ -84,6 +92,7 @@ const Form = ({ history }) => {
               </div>
             </div>
           </div>
+
           <hr />
           <div className='form-group'>
             <input
@@ -138,6 +147,12 @@ const Form = ({ history }) => {
             Sign Up
           </button>
         </form>
+        <GitHubLogin
+          clientId={githubClientId}
+          redirectUri=''
+          onSuccess={onSuccess}
+          onFailure={onFailure}
+        />
       </div>
     </Fragment>
   );
