@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import { calculateWinner } from "../Helper";
 
 const Game = () => {
-  const [history, setHistory] = useState([Array[9].fill(null)]);
-  const [stepNumber, setStepNumber] = useState(0);
+  const [boardSquares, setBoardSquares] = useState(Array[9].fill(null));
   const [XisNext, setXisNext] = useState(true);
 
-  const winner = calculateWinner(history[stepNumber]);
-  const XO = XisNext ? "X" : "O";
+  const handleClick = (i) => {
+    const sqaures = [...boardSquares];
+    if (sqaures[i]) return;
+    sqaures[i] = XisNext ? "X" : "O";
+    setBoardSquares(sqaures);
+    setXisNext(!XisNext);
+  };
 };
 
 export default Game;
