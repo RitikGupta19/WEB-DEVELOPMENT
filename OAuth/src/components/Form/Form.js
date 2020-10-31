@@ -76,19 +76,35 @@ const Form = ({ history }) => {
                   onSuccess={responseGoogle}
                   onFailure={responseGoogle}
                   cookiePolicy={"single_host_origin"}
+                  // render={(renderProps) => (
+                  //   <button style={{}}>
+                  //     <i class='fa fa-google fa-1x' aria-hidden='true'></i>
+                  //     {" "}
+                  //     Google Login
+                  //   </button>
+                  // )}
                 />
               </div>
             </div>
             <div className='col'>
               {/* Pass function call to Facebook Auth on button click*/}
               <div style={{ width: "50%" }} className='float-left mx-auto'>
-                <FacebookLogin
-                  appId={facebookAppId}
-                  autoLoad={true}
-                  fields='name,email,picture'
-                  onClick={""}
-                  callback={responseFacebook}
-                />
+                <div
+                  class='fb-login-button'
+                  data-size='medium'
+                  data-button-type='login_with'
+                  data-layout='rounded'
+                  data-auto-logout-link='false'
+                  data-use-continue-as='false'
+                  data-width=''>
+                  <FacebookLogin
+                    appId={facebookAppId}
+                    autoLoad={true}
+                    fields='name,email,picture'
+                    onClick={""}
+                    callback={responseFacebook}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -147,7 +163,10 @@ const Form = ({ history }) => {
             Sign Up
           </button>
         </form>
+        <br />
+
         <GitHubLogin
+          className={""}
           clientId={githubClientId}
           redirectUri=''
           onSuccess={onSuccess}
