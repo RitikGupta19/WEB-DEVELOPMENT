@@ -1,14 +1,15 @@
 import React from "react";
 import Square from "./Square";
 
-const Board = ({ squares, onClick }) => {
+const Board = ({ squares, handleClick }) => {
   return (
     <div className='board'>
       {squares.map((square, index) => {
+        console.log(square);
         <Square
           key={index}
           value={square}
-          onClick={(index) => onClick(index)}
+          onClick={(index) => handleClick(index)}
         />;
       })}
     </div>
