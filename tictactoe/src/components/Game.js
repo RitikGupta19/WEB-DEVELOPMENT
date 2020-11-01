@@ -29,18 +29,15 @@ const Game = () => {
     setXIsNext(step % 2 === 0);
   };
 
-  const renderMoves = () => {
+  const renderMoves = () =>
     history.map((_step, move) => {
-      console.log(move);
-      const destination = move ? `Go to #${move}` : `Go to Start`;
-      console.log(destination);
+      const destination = move ? `Go to move #${move}` : "Go to Start";
       return (
         <li key={move}>
           <button onClick={() => jumpTo(move)}>{destination}</button>
         </li>
       );
     });
-  };
 
   return (
     <Fragment>
