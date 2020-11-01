@@ -1,11 +1,10 @@
 import React from "react";
 
-const Square = ({ value, handleClick }) => {
-  const style = value !== null ? `squares ${value}` : `squares`;
-  console.log("hi", value);
+const Square = ({ value, onClick }) => {
+  const style = value ? `squares ${value}` : `squares`;
 
   return (
-    <button className={style} onClick={handleClick}>
+    <button className={style} onClick={onClick}>
       {value}
     </button>
   );

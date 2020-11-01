@@ -10,6 +10,7 @@ const Game = () => {
   const XO = xisNext ? "X" : "O";
 
   const handleClick = (i) => {
+    console.log("clicked");
     const historyPoint = history.slice(0, stepNumber + 1);
     const current = historyPoint[stepNumber];
     const squares = [...current];
@@ -29,16 +30,13 @@ const Game = () => {
   };
 
   const renderMoves = () => {
-    history.map((step, move) => {
+    history.map((_step, move) => {
+      console.log(move);
       const destination = move ? `Go to #${move}` : `Go to Start`;
+      console.log(destination);
       return (
         <li key={move}>
-          <button
-            onClick={() => {
-              jumpTo(move);
-            }}>
-            {destination}
-          </button>
+          <button onClick={() => jumpTo(move)}>{destination}</button>
         </li>
       );
     });
@@ -47,7 +45,7 @@ const Game = () => {
   return (
     <Fragment>
       <h1 style={{ textAlign: "center" }}>React - TIC TAC TOE</h1>
-      <Board squares={history[stepNumber]} handleClick={handleClick} />
+      <Board squares={history[stepNumber]} onClick={handleClick} />
       <div className='info-wrapper'>
         <div>
           <h3>History</h3>
