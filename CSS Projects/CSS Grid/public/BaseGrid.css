@@ -1,0 +1,14 @@
+.basic-grid {
+  display: grid;
+  gap: 1rem;
+
+  /* Will make 12 columns with 1fr space horizontally and will look thin on small screen */
+  /* grid-template-columns: repeat(12, 1fr); */
+
+  /* Will make 12 columns and will be overflowoing horizontally */
+  /* grid-template-columns: repeat(12, minmax(240px, 1fr)); */
+
+  /* Above were setting 12 cols in each row, now this will auto fit according to window size
+      and fill the block with min width of 240px */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
