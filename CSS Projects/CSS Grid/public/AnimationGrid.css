@@ -1,15 +1,96 @@
 .animated-grid {
   height: 85vh;
+  margin-bottom: 200px;
   display: grid;
   gap: 1rem;
 
-  /*Explicit Grid*/
+  /*Defining Explicit Grid*/
   grid-template-areas:
     "a  b  c  d"
-    "l ⭐ ⭐ e"
-    "k ⭐ ⭐ f"
+    "l  🌟 🌟 e"
+    "k  🌟 🌟 f"
     "j  i  h  g";
 
   grid-template-rows: repeat(4, 25%);
-  grid-template-columns: repeat(240px auto auto 240px);
+  grid-template-columns: 240px auto auto 240px;
+
+  --stagger-delay: 100ms;
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+    filter: hue-rotate(180deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: hue-rotate(0deg);
+  }
+}
+
+.card {
+  background-color: rgb(36, 243, 147);
+  animation: cardEntrance 700ms ease-out;
+  /* Without this tiles will already will be visible */
+  /* This determines when animation will not play (before play, after play, or both) */
+  animation-fill-mode: backwards;
+}
+
+/* Will select card which is first child of the parent class */
+.card:nth-child(1) {
+  /* Will take this child card content in grid position 'a' */
+  grid-area: a;
+  animation-delay: calc(1 * var(--stagger-delay));
+}
+
+/* Will select card which is second child of the parent class */
+.card:nth-child(2) {
+  grid-area: b;
+  animation-delay: calc(2 * var(--stagger-delay));
+}
+.card:nth-child(3) {
+  grid-area: c;
+  animation-delay: calc(3 * var(--stagger-delay));
+}
+.card:nth-child(4) {
+  grid-area: d;
+  animation-delay: calc(4 * var(--stagger-delay));
+}
+.card:nth-child(5) {
+  grid-area: e;
+  animation-delay: calc(5 * var(--stagger-delay));
+}
+.card:nth-child(6) {
+  grid-area: f;
+  animation-delay: calc(6 * var(--stagger-delay));
+}
+.card:nth-child(7) {
+  grid-area: g;
+  animation-delay: calc(7 * var(--stagger-delay));
+}
+.card:nth-child(8) {
+  grid-area: h;
+  animation-delay: calc(8 * var(--stagger-delay));
+}
+.card:nth-child(9) {
+  grid-area: i;
+  animation-delay: calc(9 * var(--stagger-delay));
+}
+.card:nth-child(10) {
+  grid-area: j;
+  animation-delay: calc(10 * var(--stagger-delay));
+}
+.card:nth-child(11) {
+  grid-area: k;
+  animation-delay: calc(11 * var(--stagger-delay));
+}
+.card:nth-child(12) {
+  grid-area: l;
+  animation-delay: calc(12 * var(--stagger-delay));
+}
+.card:last-child {
+  grid-area: 🌟;
+  animation-delay: calc(13 * var(--stagger-delay));
 }
