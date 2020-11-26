@@ -1,4 +1,4 @@
-export const Date = [
+export const Years = [
   {
     start: "2017-01-01T00:00:00Z",
     end: "2017-12-31T23:59:59Z",
@@ -53,5 +53,53 @@ export const Date = [
     start: "2007-01-01T00:00:00Z",
     end: "2007-12-31T23:59:59Z",
     label: "2007",
+  },
+];
+
+export const SortOptions = [
+  {
+    label: "Best Match",
+    dataField: "_score",
+    sortBy: "desc",
+  },
+  {
+    label: "Most Stars",
+    dataField: "stars",
+    sortBy: "desc",
+  },
+  {
+    label: "Fewest Stars",
+    dataField: "stars",
+    sortBy: "asc",
+  },
+  {
+    label: "Most Forks",
+    dataField: "forks",
+    sortBy: "desc",
+  },
+  {
+    label: "Fewest Forks",
+    dataField: "forks",
+    sortBy: "asc",
+  },
+  {
+    label: "A to Z",
+    dataField: "owner.raw",
+    sortBy: "asc",
+  },
+  {
+    label: "Z to A",
+    dataField: "owner.raw",
+    sortBy: "desc",
+  },
+  {
+    label: "Recently Updated",
+    dataField: "pushed",
+    sortBy: "desc",
+  },
+  {
+    label: "Least Recently Updated",
+    dataField: "pushed",
+    sortBy: "asc",
   },
 ];

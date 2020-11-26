@@ -5,7 +5,7 @@ import {
   SingleDropdownRange,
   RangeSlider,
 } from "@appbaseio/reactivesearch";
-import { Date } from "./Date";
+import { Years } from "./Data";
 
 const SearchFilters = ({ currentTopics, setTopics, visible }) => (
   <div className={`flex column filters-container ${!visible ? "hidden" : ""}`}>
@@ -52,7 +52,7 @@ const SearchFilters = ({ currentTopics, setTopics, visible }) => (
         placeholder='Repo created'
         title='Created'
         filterLabel='Created'
-        data={Date}
+        data={Years}
       />
     </div>
     <div className='child m10'>
