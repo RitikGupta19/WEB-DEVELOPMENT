@@ -37,7 +37,7 @@ const Header = (props) => {
 
   return (
     <nav className={`navbar ${visible ? "active" : ""}`}>
-      <div className='title'>GitXplore</div>
+      <div className='title'>GitProbe</div>
       <div className='btn toggle-btn' onClick={toggleVisibility}>
         Toggle Filters
       </div>
