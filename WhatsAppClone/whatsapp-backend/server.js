@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+require("dotenv").config();
 const WhatsAppSchema = require("./models/dbmessages");
 const Pusher = require("pusher");
 
@@ -9,8 +10,7 @@ app.use(express.json());
 const port = process.env.PORT || 9000;
 
 // Connections and Configurations
-const mongodbUrl =
-  "mongodb+srv://admin:admin@whatsappclone.ympqy.mongodb.net/WhatsappClone?retryWrites=true&w=majority";
+const mongodbUrl = process.env.MONGO_URL;
 
 mongoose.connect(mongodbUrl, {
   useCreateIndex: true,
@@ -45,10 +45,10 @@ db.once("open", () => {
 });
 
 const pusher = new Pusher({
-  appId: "1121846",
-  key: "48df40e2181cc2294e52",
-  secret: "7f15fb934f39ad1f379f",
-  cluster: "ap2",
+  appId: process.env.PUSHER_APP_ID,
+  key: process.env.PUSHER_KEY,
+  secret: process.env.PUSHER_SECRET,
+  cluster: proces.env.PUSHER_CLUSTER,
   useTLS: true,
 });
 
