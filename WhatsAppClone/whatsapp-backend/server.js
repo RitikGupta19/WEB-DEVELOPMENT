@@ -1,11 +1,23 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 require("dotenv").config();
 const WhatsAppSchema = require("./models/dbmessages");
 const Pusher = require("pusher");
 
 const app = express();
+
+// Middlewares
 app.use(express.json());
+app.use(cors());
+
+// OR another way below, without using that package------
+// Allowing request from any endpoint
+// app.use((req, res, next) => {
+//   res.setHeader("Access-Control-Allow-Origin", "*");
+//   res.setHeader("Access-Control-Allow-Headers", "*");
+//   next();
+// });
 
 const port = process.env.PORT || 9000;
 
@@ -48,7 +60,7 @@ const pusher = new Pusher({
   appId: process.env.PUSHER_APP_ID,
   key: process.env.PUSHER_KEY,
   secret: process.env.PUSHER_SECRET,
-  cluster: proces.env.PUSHER_CLUSTER,
+  cluster: process.env.PUSHER_CLUSTER,
   useTLS: true,
 });
 
