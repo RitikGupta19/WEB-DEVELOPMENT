@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./SideBar.css";
 import DonutLargeIcon from "@material-ui/icons/DonutLarge";
 import { Avatar, IconButton } from "@material-ui/core";
@@ -7,8 +7,24 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import user from "../Images/man.svg";
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 import SidebarChat from "./SidebarChat";
+import { getRooms } from "../Firebase/firebaseApi";
 
 const SideBar = () => {
+  const [rooms, setRooms] = useState([]);
+
+  useEffect(() => {
+    getRooms()
+      .then((docsArray) => {
+        setRooms(
+          docsArray.map((doc) => ({
+            id: doc.id,
+            data: doc.data(),
+          }))
+        );
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
   return (
     <div className='sidebar'>
       <div className='sidebar_header'>
@@ -32,9 +48,10 @@ const SideBar = () => {
         </div>
       </div>
       <div className='sidebar_chats'>
-        <SidebarChat />
-        <SidebarChat />
-        <SidebarChat />
+        <SidebarChat addNewChat />
+        {rooms.map((room) => (
+          <SidebarChat key={room.id} id={room.id} name={room.data.name} />
+        ))}
       </div>
     </div>
   );
