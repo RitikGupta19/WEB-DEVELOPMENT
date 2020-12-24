@@ -47,7 +47,7 @@ const App = () => {
               ]}
               placeholder='Search Repos'
               iconPosition='left'
-              autosuggest={true}
+              autosuggest={false}
               URLParams
               className='data-search-container results-container'
               innerClass={{
