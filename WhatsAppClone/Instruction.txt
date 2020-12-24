@@ -1,0 +1,7 @@
+## This whats app clone works currently with Firebase Server and Database (+Auth)
+  -> npm start : start the project (UI + server)
+
+## The code for the whats app clone using MERN and PUSHER
+  -> Should can be refered (commented part only conncetions)
+  -> nodemon server.js -> start the backend and MongoDB service
+  -> also automatically get connected with the pusher.js

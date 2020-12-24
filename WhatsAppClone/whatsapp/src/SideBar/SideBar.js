@@ -7,28 +7,34 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import user from "../Images/man.svg";
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 import SidebarChat from "./SidebarChat";
-import { getRooms } from "../Firebase/firebaseApi";
+import db from "../Firebase/firebase";
+import { useStateValue } from "../Context/StateProvider";
 
 const SideBar = () => {
   const [rooms, setRooms] = useState([]);
+  const [{ user }, dispatch] = useStateValue();
 
+  const getRooms = () => {
+    db.collection("rooms").onSnapshot((snapshot) => {
+      setRooms(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+      );
+    });
+  };
   useEffect(() => {
-    getRooms()
-      .then((docsArray) => {
-        setRooms(
-          docsArray.map((doc) => ({
-            id: doc.id,
-            data: doc.data(),
-          }))
-        );
-      })
-      .catch((err) => console.error(err));
+    getRooms();
+    return () => {
+      getRooms();
+    };
   }, []);
 
   return (
     <div className='sidebar'>
       <div className='sidebar_header'>
-        <Avatar src={user} />
+        <Avatar src={user ? user.photoURL : ""} />
         <div className='sidebar_headerRight'>
           <IconButton>
             <DonutLargeIcon />

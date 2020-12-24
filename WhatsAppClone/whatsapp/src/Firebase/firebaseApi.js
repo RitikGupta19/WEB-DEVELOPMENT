@@ -5,7 +5,7 @@ export const getRooms = () => {
   all docs brought*/
 
   // STUB
-  //b.collection("rooms")
+  //db.collection("rooms")
   //   .get()
   //   .then(function (querySnapshot) {
   //     querySnapshot

@@ -7,23 +7,54 @@ import MicIcon from "@material-ui/icons/Mic";
 import React, { useState, useEffect } from "react";
 import "./Chat.css";
 import axios from "../Axios";
+import { useParams } from "react-router-dom";
+import db from "../Firebase/firebase";
+import { useStateValue } from "../Context/StateProvider";
+import firebase from "firebase";
 
-const Chat = ({ messages }) => {
+const Chat = () => {
   const [input, setInput] = useState("");
   const [seed, setSeed] = useState("");
+  const { roomID } = useParams();
+  const [roomName, setRoomName] = useState("");
+  // NOTE for firebase
+  const [messages, setMessages] = useState([]);
+  const [{ user }, dispatch] = useStateValue();
+
+  useEffect(() => {
+    db.collection("rooms")
+      .doc(roomID)
+      .onSnapshot((snapshot) => {
+        setRoomName(snapshot.data().name);
+      });
+
+    db.collection("rooms")
+      .doc(roomID)
+      .collection("messages")
+      .orderBy("timestamp", "asc")
+      .onSnapshot((snapshot) => {
+        setMessages(snapshot.docs.map((doc) => doc.data()));
+      });
+  }, [roomID]);
 
   useEffect(() => {
     setSeed(Math.floor(Math.random() * 5000));
-  }, []);
+  }, [roomID]);
+
   const sendMessage = async (e) => {
     e.preventDefault();
-    await axios.post("/messages/new", {
-      message: input,
-      name: "DEMO APP",
-      timestamp: new Date(),
-      received: false,
-    });
+    // await axios.post("/messages/new", {
+    //   message: input,
+    //   name: "DEMO APP",
+    //   timestamp: new Date(),
+    //   received: false,
+    // });
 
+    db.collection("rooms").doc(roomID).collection("messages").add({
+      name: user.displayName,
+      message: input,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });
     setInput("");
   };
 
@@ -32,8 +63,10 @@ const Chat = ({ messages }) => {
       <div className='chat_header'>
         <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`} />
         <div className='chat_headerInfo'>
-          <h3>Room Name</h3>
-          <p>Last seen ...</p>
+          <h3>{roomName}</h3>
+          <p>
+            {messages[messages.length - 1]?.timestamp?.toDate().toUTCString()}
+          </p>
         </div>
         <div className='chat_headerRight'>
           <IconButton>
@@ -48,8 +81,21 @@ const Chat = ({ messages }) => {
         </div>
       </div>
       <div className='chat_body'>
-        {messages.map((message) => (
+        {
+          // NOTE MONGODB and PUSHER version
+          /*{messages.map((message) => (
           <p className={`chat_message ${message.received && `chat_receiver`}`}>
+            <span className='chat_name'>{message.name}</span>
+            {message.message}
+            <span className='chat_timestamp'>{message.timestamp}</span>
+          </p>
+        ))} */
+        }
+        {messages.map((message) => (
+          <p
+            className={`chat_message ${
+              message.name === message.displayName && `chat_receiver`
+            }`}>
             <span className='chat_name'>{message.name}</span>
             {message.message}
             <span className='chat_timestamp'>{message.timestamp}</span>
