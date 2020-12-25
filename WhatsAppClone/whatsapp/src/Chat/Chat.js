@@ -22,19 +22,21 @@ const Chat = () => {
   const [{ user }, dispatch] = useStateValue();
 
   useEffect(() => {
-    db.collection("rooms")
-      .doc(roomID)
-      .onSnapshot((snapshot) => {
-        setRoomName(snapshot.data().name);
-      });
+    if (roomID) {
+      db.collection("rooms")
+        .doc(roomID)
+        .onSnapshot((snapshot) => {
+          setRoomName(snapshot.data().name);
+        });
 
-    db.collection("rooms")
-      .doc(roomID)
-      .collection("messages")
-      .orderBy("timestamp", "asc")
-      .onSnapshot((snapshot) => {
-        setMessages(snapshot.docs.map((doc) => doc.data()));
-      });
+      db.collection("rooms")
+        .doc(roomID)
+        .collection("messages")
+        .orderBy("timestamp", "asc")
+        .onSnapshot((snapshot) =>
+          setMessages(snapshot.docs.map((doc) => doc.data()))
+        );
+    }
   }, [roomID]);
 
   useEffect(() => {
@@ -81,24 +83,24 @@ const Chat = () => {
         </div>
       </div>
       <div className='chat_body'>
-        {
-          // NOTE MONGODB and PUSHER version
-          /*{messages.map((message) => (
+        {/* NOTE MONGODB and PUSHER version
+          {messages.map((message) => (
           <p className={`chat_message ${message.received && `chat_receiver`}`}>
             <span className='chat_name'>{message.name}</span>
             {message.message}
             <span className='chat_timestamp'>{message.timestamp}</span>
           </p>
-        ))} */
-        }
+          ))} */}
         {messages.map((message) => (
           <p
             className={`chat_message ${
-              message.name === message.displayName && `chat_receiver`
+              message.name === user.displayName && `chat_receiver`
             }`}>
             <span className='chat_name'>{message.name}</span>
             {message.message}
-            <span className='chat_timestamp'>{message.timestamp}</span>
+            <span className='chat_timestamp'>
+              {new Date(message.timestamp?.toDate()).toUTCString()}
+            </span>
           </p>
         ))}
       </div>

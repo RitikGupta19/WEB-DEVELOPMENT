@@ -28,7 +28,6 @@ const SidebarChat = ({ addNewChat, id, name }) => {
   const createChat = () => {
     const roomName = prompt("Enter room name");
     if (roomName) {
-      // TODO - database stuff
       addRooms(roomName);
     }
   };

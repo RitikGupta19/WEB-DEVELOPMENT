@@ -47,7 +47,7 @@ function App() {
               <SideBar />
               <Route exact path='/rooms/:roomID' component={Chat} />
               {/*<Chat messages={messages} />*/}
-              <Route path='/' component={Chat} />
+              <Route path='/' />
             </div>
           </Switch>
         </Router>
