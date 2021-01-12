@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "version": "0.0.0",
+  "name": "todoapp",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "description": "Thanks for applying to the CoronaSafe Engineering fellowship!",
+  "main": "todo.js",
+  "author": "Ritik Gupta",
+  "license": "ISC",
+  "dependencies": {
+    "linebyline": "^1.3.0",
+    "nodemon": "^2.0.6",
+    "reverse-line-reader": "^0.2.6"
+  }
+}
