@@ -8,6 +8,17 @@
   display: flex;
   flex-direction: row;
   color: white;
-  font-size: 20px;
-  padding: 10px;
+  font-size: 25px;
+  padding: 15px;
+  font-weight: 900;
+}
+
+.sidebar {
+  background-color: white;
+  height: 100vh;
+  z-index: 1;
+  position: fixed;
+  box-shadow: 0 0 20px 0 #555;
+  -moz-box-shadow: 0 0 20px 0 #555;
+  -webkit-box-shadow: 0 0 20px 0 #555;
 }

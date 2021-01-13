@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import classes from "./Sidebar.module.css";
-import { Layout, Menu } from "antd";
+import { Menu } from "antd";
 import {
   CloseCircleOutlined,
   UserOutlined,
@@ -13,76 +13,78 @@ import {
   FileAddOutlined,
   FileSearchOutlined,
 } from "@ant-design/icons";
-const { Sider } = Layout;
 
 const Sidebar = () => {
   return (
-    <Sider
-      breakpoint='lg'
-      collapsedWidth='0'
-      onBreakpoint={(broken) => {}}
-      onCollapse={(collapsed, type) => {}}
-      className={classes.slider}
-      style={{
-        position: "fixed",
-        height: "100vh",
-        zIndex: "1",
-      }}>
+    <div className={classes.sidebar}>
       <div className={classes.logo}>
         {" "}
         <DatabaseOutlined
-          style={{ color: "white", fontSize: "20px", padding: "5px 10px" }}
+          style={{ color: "gray", fontSize: "25px", padding: "8px 10px" }}
         />
-        <Link style={{ color: "white" }} exact to='/'>
+        <Link style={{ color: "gray" }} exact to='/'>
           {" "}
-          Dashboard
+          Shards Dashboard
         </Link>
       </div>
-      <Menu theme='dark' mode='inline' defaultSelectedKeys={["1"]}>
-        <Menu.Item key='1' icon={<EditOutlined />}>
+      <Menu
+        mode='inline'
+        defaultSelectedKeys={["1"]}
+        style={{ fontSize: "18px" }}>
+        <Menu.Item key='1' icon={<EditOutlined style={{ fontSize: "20px" }} />}>
           <Link exact to='/'>
             {" "}
             Blog Dashboard
           </Link>
         </Menu.Item>
-        <Menu.Item key='2' icon={<FileTextOutlined />}>
+        <Menu.Item
+          key='2'
+          icon={<FileTextOutlined style={{ fontSize: "20px" }} />}>
           <Link exact to='/blogPosts'>
             {" "}
             Blog Posts
           </Link>
         </Menu.Item>
-        <Menu.Item key='3' icon={<FileAddOutlined />}>
+        <Menu.Item
+          key='3'
+          icon={<FileAddOutlined style={{ fontSize: "20px" }} />}>
           <Link exact to='/addPost'>
             {" "}
             Add New Post
           </Link>
         </Menu.Item>
-        <Menu.Item key='4' icon={<FileSearchOutlined />}>
+        <Menu.Item
+          key='4'
+          icon={<FileSearchOutlined style={{ fontSize: "20px" }} />}>
           <Link exact to='/formComponents'>
             {" "}
             Forms & Components
           </Link>
         </Menu.Item>
-        <Menu.Item key='4' icon={<TableOutlined />}>
+        <Menu.Item
+          key='5'
+          icon={<TableOutlined style={{ fontSize: "20px" }} />}>
           <Link exact to='/tables'>
             {" "}
             Tables
           </Link>
         </Menu.Item>
-        <Menu.Item key='4' icon={<UserOutlined />}>
+        <Menu.Item key='6' icon={<UserOutlined style={{ fontSize: "20px" }} />}>
           <Link exact to='/userProfile'>
             {" "}
             User Profile
           </Link>
         </Menu.Item>
-        <Menu.Item key='4' icon={<CloseCircleOutlined />}>
+        <Menu.Item
+          key='7'
+          icon={<CloseCircleOutlined style={{ fontSize: "20px" }} />}>
           <Link exact to='/errors'>
             {" "}
             Errors
           </Link>
         </Menu.Item>
       </Menu>
-    </Sider>
+    </div>
   );
 };
 

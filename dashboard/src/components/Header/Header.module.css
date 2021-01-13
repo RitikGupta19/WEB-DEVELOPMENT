@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid ghostwhite;
+  height: 10vh;
+  box-shadow: 0 -3px 10px #555;
+  padding: 15px;
+}
+
+.userInfo {
+}
+
+.notification {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+}

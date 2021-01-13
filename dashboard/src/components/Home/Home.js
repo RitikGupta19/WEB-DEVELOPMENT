@@ -1,35 +1,20 @@
 import React from "react";
 import classes from "./Home.module.css";
 import Sidebar from "../Sidebar/Sidebar";
-import { Layout } from "antd";
-const { Header, Content, Footer } = Layout;
+import { Row, Col } from "antd";
+import Routes from "../../Routes";
+import Header from "../Header/Header";
 
 const Home = () => {
   return (
-    <Layout className={classes.layout}>
-      <Sidebar />
-      <Layout>
-        <div>
-          <Header
-            className={classes.siteLayoutSubHeaderBackground}
-            style={{ padding: 0 }}>
-            <div>Hello</div>
-            <div>Hello</div>
-            <div>Hello</div>
-          </Header>
-        </div>
-        <Content style={{ margin: "24px 16px 0" }}>
-          <div
-            className={classes.siteLayoutBackground}
-            style={{ padding: 24, minHeight: 360 }}>
-            content
-          </div>
-        </Content>
-        <Footer style={{ textAlign: "center" }}>
-          Dashboard ©2021 Created using React + Antd
-        </Footer>
-      </Layout>
-    </Layout>
+    <Row>
+      <Col xs={0} sm={0} md={0} lg={4} xl={4} xxl={4}>
+        <Sidebar />
+      </Col>
+      <Col xs={24} sm={24} md={24} lg={20} xl={20} xxl={20}>
+        <Header />
+      </Col>
+    </Row>
   );
 };
 
