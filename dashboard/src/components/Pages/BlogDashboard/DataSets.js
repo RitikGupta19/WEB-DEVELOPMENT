@@ -33,13 +33,14 @@ export const graphOptions = {
 
 export const cardDataSets = [
   {
+    label: "POSTS",
     value: "2,315",
     percent: "81.25%",
     type: "positive",
     datasets: [
       {
         label: "POSTS",
-        data: ["2,315"],
+        data: [4, 1, 2, 3, 6],
         backgroundColor: ["rgba(255, 99, 132, 0.2)"],
         borderColor: ["rgba(255, 99, 132, 1)"],
         borderWidth: 1,
@@ -47,12 +48,14 @@ export const cardDataSets = [
     ],
   },
   {
+    label: "PAGES",
     value: "3,315",
     percent: "19.25%",
     type: "negative",
     datasets: [
       {
         label: "PAGES",
+        data: [1, 5, 3, 6, 7],
         backgroundColor: ["rgba(54, 162, 235, 0.2)"],
         borderColor: ["rgba(54, 162, 235, 1)"],
         borderWidth: 1,
@@ -60,29 +63,31 @@ export const cardDataSets = [
     ],
   },
   {
+    label: "COMMENTS",
     value: "2,995",
     percent: "41.25%",
     type: "positive",
     datasets: [
       {
         label: "COMMENTS",
-        data: ["2,995"],
-        backgroundColor: ["rgba(255, 99, 132, 0.2)"],
-        borderColor: ["rgba(255, 99, 132, 1)"],
+        data: [1, 2, 8, 4, 0],
+        backgroundColor: ["rgb(255, 255, 77, 0.4)"],
+        borderColor: ["rgba(255, 255, 77)"],
         borderWidth: 1,
       },
     ],
   },
   {
+    label: "SUBSCRIBERS",
     value: "5,315",
     percent: "58.25%",
     type: "negative",
     datasets: [
       {
         label: "SUBSCRIBERS",
-        data: ["5,315"],
-        backgroundColor: ["rgba(255, 99, 132, 0.2)"],
-        borderColor: ["rgba(255, 99, 132, 1)"],
+        data: [2, 4, 2, 4, 2],
+        backgroundColor: ["rgb(102, 255, 102, 0.4)"],
+        borderColor: ["rgb(102, 255, 102)"],
         borderWidth: 1,
       },
     ],
@@ -90,6 +95,16 @@ export const cardDataSets = [
 ];
 
 export const cardOptions = {
+  legend: {
+    display: false,
+  },
+  tooltips: {
+    callbacks: {
+      label: function (tooltipItem) {
+        return tooltipItem.yLabel;
+      },
+    },
+  },
   maintainAspectRatio: false,
   scales: {
     xAxes: [

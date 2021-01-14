@@ -11,7 +11,7 @@ const StatsCard = ({ data }) => {
     <div className={classes.statsCard}>
       <div className={classes.statsCard__name}>
         <Title level={5} style={{ color: "#2e6191" }}>
-          {data.datasets.label}
+          {data.label}
         </Title>
       </div>
       <div className={classes.statsCard__data}>
@@ -28,8 +28,9 @@ const StatsCard = ({ data }) => {
           </p>
         )}
       </div>
-      <Line height='175' width='100%' data={data} options={cardOptions} />
-      <div></div>
+      <div className={classes.statsCards__graph}>
+        <Line height='175' width='100%' data={data} options={cardOptions} />
+      </div>
     </div>
   );
 };
