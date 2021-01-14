@@ -1,24 +1,15 @@
-.siteLayoutSubHeaderBackground {
-  /* position: absolute;
-  left: 15%;
-  background: #fff;
-  width: 100%;
-  display: flex;
-  flex-direction: row; */
-  /* border: 1px solid rgb(235, 237, 240);
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 60px;
-  position: fixed;
-  width: 100%;
-  background-color: gainsboro; */
-  background: #fff;
+.mainContent {
+  margin-left: 340px;
 }
 
-.siteLayoutBackground {
-  background: #fff;
+@media screen and (max-width: 1100px) {
+  .mainContent {
+    margin-left: 270px;
+  }
 }
 
-.body {
-  position: relative;
+@media screen and (max-width: 950px) {
+  .mainContent {
+    margin-left: 70px;
+  }
 }

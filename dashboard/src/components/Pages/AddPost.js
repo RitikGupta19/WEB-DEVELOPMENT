@@ -1,5 +1,6 @@
 import React from "react";
 import comingSoon from "../../assets/images/comingsoon.svg";
+//ANTD imports
 import { Typography } from "antd";
 
 const { Title } = Typography;

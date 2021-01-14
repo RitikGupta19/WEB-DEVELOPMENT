@@ -40,5 +40,6 @@
   border-bottom: 2px solid lightgrey;
 }
 
-.graphCard__filters {
+.pieChartCard__graph {
+  padding-top: 10px;
 }

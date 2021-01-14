@@ -1,24 +1,56 @@
-#components-layout-demo-responsive .logo {
-  height: 32px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px;
-}
-
 .logo {
   display: flex;
   flex-direction: row;
   color: white;
-  font-size: 25px;
+  font-size: 20px;
   padding: 15px;
   font-weight: 700;
+  align-items: center;
+}
+
+.logo p {
+  margin: 0;
 }
 
 .sidebar {
-  background-color: white;
+  background-color: #fff;
   height: 100vh;
   z-index: 1;
   position: fixed;
   box-shadow: 0 0 20px 0 #555;
   -moz-box-shadow: 0 0 20px 0 #555;
   -webkit-box-shadow: 0 0 20px 0 #555;
+  width: 340px;
+}
+
+.menuItemsDesktop,
+.menuItemsPhone {
+  color: gray;
+}
+.menuItemsPhone {
+  display: none;
+}
+
+@media screen and (max-width: 1100px) {
+  .sidebar {
+    width: 270px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .sidebar {
+    width: 70px;
+  }
+
+  .menuItemsPhone {
+    display: block;
+  }
+
+  .menuItemsDesktop {
+    display: none;
+  }
+
+  .logo p {
+    display: none;
+  }
 }

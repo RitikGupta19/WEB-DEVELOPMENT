@@ -1,8 +1,13 @@
 import classes from "./Header.module.css";
 import React from "react";
-import { Input, Card, Avatar, Badge } from "antd";
-import { SearchOutlined, BellOutlined, UserOutlined } from "@ant-design/icons";
-const { Meta } = Card;
+// ANTD imports
+import { Input, Avatar, Badge } from "antd";
+import {
+  SearchOutlined,
+  BellOutlined,
+  UserOutlined,
+  CaretDownOutlined,
+} from "@ant-design/icons";
 
 const Header = () => {
   return (
@@ -14,37 +19,24 @@ const Header = () => {
         bordered={false}
       />
       <div className={classes.notification}>
-        <BellOutlined
-          style={{
-            fontSize: "25px",
-            color: "gray",
-            padding: "11px 0 0 0",
-            cursor: "pointer",
-          }}
-        />
-
-        <div className={classes.badge}>
-          {" "}
-          <Badge count={5} color='blue'></Badge>
-        </div>
-      </div>
-      <div>
-        <Card
-          style={{ width: 250, height: "5vh", padding: "0 10px" }}
-          loading={""}
-          bordered={false}
-          size='small'>
-          <Meta
-            avatar={
-              <Avatar
-                style={{ backgroundColor: "#87d068" }}
-                icon={<UserOutlined />}
-              />
-            }
-            title='John Doe'
-            className={classes.userInfo}
+        <Badge count={5}>
+          <BellOutlined
+            style={{
+              fontSize: "28px",
+              color: "gray",
+              cursor: "pointer",
+            }}
           />
-        </Card>
+        </Badge>
+      </div>
+      <div className={classes.userInfo}>
+        <Avatar
+          style={{ backgroundColor: "#87d068" }}
+          icon={<UserOutlined />}
+        />
+        <p>
+          John Doe <CaretDownOutlined />
+        </p>
       </div>
     </div>
   );

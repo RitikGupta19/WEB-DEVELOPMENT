@@ -1,9 +1,10 @@
 import React from "react";
-import { Typography, Row, Col } from "antd";
 import StatsCardList from "./StatsCardList";
 import StatsGraph from "./StatsGraph";
 import StatsPieChart from "./StatsPieChart";
 import CardList from "./CardList";
+//ANTD imports
+import { Typography, Row, Col } from "antd";
 
 const { Title } = Typography;
 

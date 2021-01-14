@@ -1,7 +1,7 @@
-import classes from "./Content.module.css";
 import React from "react";
 import { Switch } from "react-router-dom";
 import Routes from "../../Routes";
+import classes from "./Content.module.css";
 
 const Content = () => {
   return (

@@ -1,5 +1,7 @@
 import classes from "./BlogDashboard.module.css";
 import React from "react";
+import NoData from "../../../assets/images/NoData.svg";
+
 import { Typography } from "antd";
 const { Title } = Typography;
 
@@ -11,6 +13,17 @@ const Card = ({ title }) => {
           {title}
         </Title>
       </div>
+      <img
+        style={{
+          display: "block",
+          marginLeft: "auto",
+          marginRight: "auto",
+          width: "50%",
+          marginTop: "125px",
+        }}
+        src={NoData}
+        alt='Empty'
+      />
     </div>
   );
 };
