@@ -13,7 +13,19 @@ const StatsGraph = () => {
           Users Overview
         </Title>
       </div>
-      <div className={classes.graphCard__filters}></div>
+      <div className={classes.graphCard__filters}>
+        <div className={classes.graphCard__dateButtons}>
+          <button type='button' className={classes.buttons}>
+            Start Date
+          </button>
+          <button type='button' className={classes.buttons}>
+            End Date
+          </button>
+        </div>
+        <button type='button' className={classes.buttons}>
+          View Full Report
+        </button>
+      </div>
       <div className={classes.graphCard__graph}>
         <Line
           height='300'

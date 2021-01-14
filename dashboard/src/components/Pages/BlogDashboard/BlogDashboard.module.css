@@ -37,9 +37,39 @@
 .otherCards__title,
 .pieChartCard__title {
   padding: 15px;
-  border-bottom: 2px solid lightgrey;
+  border-bottom: 2px solid rgb(248, 248, 248);
 }
 
 .pieChartCard__graph {
   padding-top: 10px;
+}
+
+.graphCard__filters {
+  display: flex;
+  background-color: rgb(243, 243, 243);
+  padding: 10px;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.pieChartCard__filters {
+  display: flex;
+  background-color: rgb(243, 243, 243);
+  padding: 10px;
+  justify-content: space-between;
+  margin: 10px 0;
+  justify-content: end;
+}
+
+.graphCard__dateButtons {
+  display: flex;
+}
+
+.buttons {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  color: rgb(27, 58, 87);
+  box-shadow: -3px -3px 1px -3px;
+  margin: 0 8px;
 }

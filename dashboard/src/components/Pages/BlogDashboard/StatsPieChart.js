@@ -21,6 +21,11 @@ const StatsPieChart = () => {
           options={pieChartOptions}
         />
       </div>
+      <div className={classes.pieChartCard__filters}>
+        <button type='button' className={classes.buttons}>
+          View Full Report
+        </button>
+      </div>
     </div>
   );
 };
