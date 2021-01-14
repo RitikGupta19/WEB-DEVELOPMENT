@@ -5,8 +5,9 @@ import classes from "./Content.module.css";
 
 const Content = () => {
   return (
-    <div className={classes.mainBody}>
+    <div className={classes.content}>
       <Switch>
+        {/* All pages are rendered here */}
         <Routes />
       </Switch>
     </div>

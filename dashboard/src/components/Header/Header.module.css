@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-.userInfo {
+.header__userInfo {
   display: flex;
   align-items: center;
   width: 200px;
@@ -15,15 +15,15 @@
   cursor: pointer;
 }
 
-.userInfo p {
+.header__userInfo p {
   margin: 0 0 0 10px;
 }
 
 @media (max-width: 580px) {
-  .userInfo p {
+  .header__userInfo p {
     display: none;
   }
-  .userInfo {
+  .header__userInfo {
     width: 50px;
   }
 }

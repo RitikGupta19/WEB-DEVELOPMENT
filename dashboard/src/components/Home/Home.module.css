@@ -1,15 +1,15 @@
-.mainContent {
+.home__mainContent {
   margin-left: 340px;
 }
 
 @media screen and (max-width: 1100px) {
-  .mainContent {
+  .home__mainContent {
     margin-left: 270px;
   }
 }
 
 @media screen and (max-width: 950px) {
-  .mainContent {
+  .home__mainContent {
     margin-left: 70px;
   }
 }

@@ -17,7 +17,11 @@ const BlogDashboard = () => {
       <Title level={2} style={{ color: "#1b3a57", marginTop: "-0.1em" }}>
         Blog Overview
       </Title>
+
+      {/* Statistics Card List */}
       <StatsCardList />
+
+      {/* Graph and Pie Chart Component */}
       <Row gutter={[32, 24]}>
         <Col xs={24} sm={22} md={22} lg={16} xl={16} xxl={16}>
           <StatsGraph />
@@ -26,6 +30,8 @@ const BlogDashboard = () => {
           <StatsPieChart />
         </Col>
       </Row>
+
+      {/* Discussion / Other Card List */}
       <CardList />
     </div>
   );

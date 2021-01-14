@@ -12,13 +12,15 @@ import {
 const Header = () => {
   return (
     <div className={classes.header}>
+      {/* Header Input */}
       <Input
         size='large'
         placeholder='Search for Something...'
         prefix={<SearchOutlined style={{ color: "gray" }} />}
         bordered={false}
       />
-      <div className={classes.notification}>
+      {/* Notification Bell */}
+      <div>
         <Badge count={5}>
           <BellOutlined
             style={{
@@ -29,7 +31,8 @@ const Header = () => {
           />
         </Badge>
       </div>
-      <div className={classes.userInfo}>
+      {/* User Info */}
+      <div className={classes.header__userInfo}>
         <Avatar
           style={{ backgroundColor: "#87d068" }}
           icon={<UserOutlined />}

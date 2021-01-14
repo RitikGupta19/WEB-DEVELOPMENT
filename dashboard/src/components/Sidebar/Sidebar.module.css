@@ -1,4 +1,15 @@
-.logo {
+.sidebar {
+  background-color: #fff;
+  height: 100%;
+  z-index: 1;
+  position: fixed;
+  box-shadow: 0 0 20px 0 #555;
+  -moz-box-shadow: 0 0 20px 0 #555;
+  -webkit-box-shadow: 0 0 20px 0 #555;
+  width: 340px;
+}
+
+.sidebar__logo {
   display: flex;
   flex-direction: row;
   color: white;
@@ -8,26 +19,15 @@
   align-items: center;
 }
 
-.logo p {
+.sidebar__logo p {
   margin: 0;
 }
 
-.sidebar {
-  background-color: #fff;
-  height: 100vh;
-  z-index: 1;
-  position: fixed;
-  box-shadow: 0 0 20px 0 #555;
-  -moz-box-shadow: 0 0 20px 0 #555;
-  -webkit-box-shadow: 0 0 20px 0 #555;
-  width: 340px;
-}
-
-.menuItemsDesktop,
-.menuItemsPhone {
+.sidebar__menuItemsDesktop,
+.sidebar__menuItemsPhone {
   color: gray;
 }
-.menuItemsPhone {
+.sidebar__menuItemsPhone {
   display: none;
 }
 
@@ -42,15 +42,15 @@
     width: 70px;
   }
 
-  .menuItemsPhone {
+  .sidebar__menuItemsPhone {
     display: block;
   }
 
-  .menuItemsDesktop {
+  .sidebar__menuItemsDesktop {
     display: none;
   }
 
-  .logo p {
+  .sidebar__logo p {
     display: none;
   }
 }

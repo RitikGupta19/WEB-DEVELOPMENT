@@ -18,7 +18,7 @@ import {
 const Sidebar = () => {
   return (
     <div className={classes.sidebar}>
-      <div className={classes.logo}>
+      <div className={classes.sidebar__logo}>
         <DatabaseOutlined
           style={{ color: "#1890ff", fontSize: "25px", padding: "8px 10px" }}
         />
@@ -26,8 +26,9 @@ const Sidebar = () => {
           Shards Dashboard
         </p>
       </div>
+      {/* Sidebar for Desktop */}
       <Menu
-        className={classes.menuItemsDesktop}
+        className={classes.sidebar__menuItemsDesktop}
         mode='inline'
         defaultSelectedKeys={["1"]}
         style={{ fontSize: "18px" }}>
@@ -84,8 +85,10 @@ const Sidebar = () => {
           </Link>
         </Menu.Item>
       </Menu>
+
+      {/* Sidebar for Phone (Small Screen devices)*/}
       <Menu
-        className={classes.menuItemsPhone}
+        className={classes.sidebar__menuItemsPhone}
         mode='inline'
         defaultSelectedKeys={["1"]}
         style={{ fontSize: "18px" }}>
