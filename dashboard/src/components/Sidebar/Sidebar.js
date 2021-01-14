@@ -20,12 +20,12 @@ const Sidebar = () => {
       <div className={classes.logo}>
         {" "}
         <DatabaseOutlined
-          style={{ color: "gray", fontSize: "25px", padding: "8px 10px" }}
+          style={{ color: "#1890ff", fontSize: "25px", padding: "8px 10px" }}
         />
-        <Link style={{ color: "gray" }} exact to='/'>
+        <p style={{ color: "#1890ff" }} exact to='/'>
           {" "}
           Shards Dashboard
-        </Link>
+        </p>
       </div>
       <Menu
         mode='inline'

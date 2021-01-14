@@ -13,7 +13,7 @@ const Header = () => {
         prefix={<SearchOutlined style={{ color: "gray" }} />}
         bordered={false}
       />
-      <div>
+      <div className={classes.notification}>
         <BellOutlined
           style={{
             fontSize: "25px",
@@ -22,7 +22,11 @@ const Header = () => {
             cursor: "pointer",
           }}
         />
-        <Badge count={1} color='blue' />
+
+        <div className={classes.badge}>
+          {" "}
+          <Badge count={5} color='blue'></Badge>
+        </div>
       </div>
       <div>
         <Card

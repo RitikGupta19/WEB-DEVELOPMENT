@@ -2,8 +2,8 @@ import React from "react";
 import classes from "./Home.module.css";
 import Sidebar from "../Sidebar/Sidebar";
 import { Row, Col } from "antd";
-import Routes from "../../Routes";
 import Header from "../Header/Header";
+import Content from "../Content/Content";
 
 const Home = () => {
   return (
@@ -13,6 +13,7 @@ const Home = () => {
       </Col>
       <Col xs={24} sm={24} md={24} lg={20} xl={20} xxl={20}>
         <Header />
+        <Content />
       </Col>
     </Row>
   );

@@ -6,10 +6,12 @@ import Errors from "./components/Pages/Error";
 import Tables from "./components/Pages/Tables";
 import UserProfile from "./components/Pages/UserProfile";
 import FormComponents from "./components/Pages/FormComponents";
+import BlogDashboard from "./components/Pages/BlogDashboard/BlogDashboard";
 
 const Routes = () => {
   return (
     <Switch>
+      <Route exact path='/' component={BlogDashboard} />
       <Route path='/addPost' component={AddPost} />
       <Route path='/blogPosts' component={BlogPost} />
       <Route path='/errors' component={Errors} />
