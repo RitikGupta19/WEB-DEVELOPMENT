@@ -19,7 +19,7 @@ const Card = ({ title }) => {
           marginLeft: "auto",
           marginRight: "auto",
           width: "50%",
-          marginTop: "125px",
+          marginTop: "75px",
         }}
         src={NoData}
         alt='Empty'
