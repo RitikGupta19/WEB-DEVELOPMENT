@@ -16,11 +16,15 @@
 .statsCard__name {
   text-align: center;
   padding: 5px;
+  position: inherit;
+  z-index: 1;
 }
 
 .statsCard__data {
   text-align: center;
   padding: 5px;
+  position: inherit;
+  z-index: 1;
 }
 
 .statsCards__graph {

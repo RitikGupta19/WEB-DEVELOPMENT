@@ -8,28 +8,30 @@ const { Title } = Typography;
 
 const StatsCard = ({ data }) => {
   return (
-    <div className={classes.statsCard}>
-      <div className={classes.statsCard__name}>
-        <Title level={5} style={{ color: "#2e6191" }}>
-          {data.label}
-        </Title>
-      </div>
-      <div className={classes.statsCard__data}>
-        <Title style={{ color: "#2e6191" }}>{data.value}</Title>
-        {data.type === "positive" ? (
-          <p style={{ color: "green" }}>
-            <CaretUpOutlined style={{ color: "green" }} />
-            {data.percent}
-          </p>
-        ) : (
-          <p style={{ color: "red" }}>
-            <CaretDownOutlined style={{ color: "red" }} />
-            {data.percent}
-          </p>
-        )}
-      </div>
-      <div className={classes.statsCards__graph}>
-        <Line height='175' width='100%' data={data} options={cardOptions} />
+    <div>
+      <div className={classes.statsCard}>
+        <div className={classes.statsCards__graph}>
+          <Line height='175' width='100%' data={data} options={cardOptions} />
+        </div>
+        <div className={classes.statsCard__name}>
+          <Title level={5} style={{ color: "#2e6191" }}>
+            {data.label}
+          </Title>
+        </div>
+        <div className={classes.statsCard__data}>
+          <Title style={{ color: "#2e6191" }}>{data.value}</Title>
+          {data.type === "positive" ? (
+            <p style={{ color: "green" }}>
+              <CaretUpOutlined style={{ color: "green" }} />
+              {data.percent}
+            </p>
+          ) : (
+            <p style={{ color: "red" }}>
+              <CaretDownOutlined style={{ color: "red" }} />
+              {data.percent}
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );

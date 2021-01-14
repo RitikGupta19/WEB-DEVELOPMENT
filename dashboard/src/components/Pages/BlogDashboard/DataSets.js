@@ -114,6 +114,7 @@ export const cardOptions = {
         },
         gridLines: {
           display: false,
+          tickMarkLength: 0,
         },
       },
     ],
@@ -124,6 +125,7 @@ export const cardOptions = {
         },
         gridLines: {
           display: false,
+          tickMarkLength: 0,
         },
       },
     ],
