@@ -32,7 +32,7 @@ Authenticated using Firebase and use of Pusher for the near real-time experience
 
 ## [DASHBOARD](https://github.com/RitikGupta19/MERN/tree/master/dashboard) 
 A responsive dashboard for analytics and user information. Designed using ANT design library, Sample data and its implementation using Chart.js
-Live Project Link: \
+Live Project Link: https://dashboard-6c907.web.app/ \
 \
 <a href="https://reactjs.org/" title="React"><img src="https://github.com/tomchen/stack-icons/blob/master/logos/react.svg" alt="React" width="30px" height="30px"></a>
 
