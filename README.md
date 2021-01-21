@@ -30,6 +30,11 @@ Authenticated using Firebase and use of Pusher for the near real-time experience
 \
 <a href="https://reactjs.org/" title="React"><img src="https://github.com/tomchen/stack-icons/blob/master/logos/react.svg" alt="React" width="30px" height="30px"></a>
 
+## [DASHBOARD](https://github.com/RitikGupta19/MERN/tree/master/dashboard) 
+A responsive dashboard for analytics and user information. Designed using ANT design library, Sample data and its implementation using Chart.js
+Live Project Link: https://dashboard-6c907.web.app/ \
+\
+<a href="https://reactjs.org/" title="React"><img src="https://github.com/tomchen/stack-icons/blob/master/logos/react.svg" alt="React" width="30px" height="30px"></a>
 
 ## [DEVELOPERIN](https://github.com/RitikGupta19/MERN/tree/master/DeveloperIn) 
 Social Media for developers with some fundamental features like adding Experience,  Education to profile, creating post, liking them, commenting Post, viewing other developers profile. \
@@ -52,6 +57,12 @@ Along with authentication using JWT it uses Braintree payment gateway. Worked in
 Video Streaming Web App developed using REACT and YouTube Data API v3 for fetching data (videos, channel information) using Axios (JavaScript Library). Improvement in progress by providing comments and other statistics as well in App.\
 \
 <a href="https://reactjs.org/" title="React"><img src="https://github.com/tomchen/stack-icons/blob/master/logos/react.svg" alt="React" width="30px" height="30px"></a>
+
+
+## [NODE TODO CLI APP](https://github.com/RitikGupta19/MERN/tree/master/node_cli_todo_app) 
+ A todo app performing ADD, DELETE, LIST (Show) and COMPLETE operations through Command Line Interface. It uses core NodeJS , File system concepts for its implementation. \
+ \
+<a href="https://nodejs.org/" title="Node.js"><img src="https://github.com/tomchen/stack-icons/blob/master/logos/nodejs-icon.svg" alt="Node.js" width="30px" height="30px"></a>
 
 ## [BACKEND](https://github.com/RitikGupta19/MERN/tree/master/BackEnd/RESTAPI) 
  Express framework used to request the resources from Database (MongoDB) using POSTMAN. Authentication of user through passport JWT and OAUTH authentication. Concepts of CORS used to access resource from different origin. \
