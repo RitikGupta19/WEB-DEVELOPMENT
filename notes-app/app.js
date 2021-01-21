@@ -1,6 +1,6 @@
 const fs = require("fs");
 const chalk = require("chalk");
-const getString = require("./notes");
+const notes = require("./notes");
 const yargs = require("yargs");
 
 // Registering a new command in yargs
@@ -8,8 +8,20 @@ const yargs = require("yargs");
 yargs.command({
   command: "add",
   describe: "Add a new note!",
-  handler: function () {
-    console.log("I added a new command");
+  builder: {
+    title: {
+      describe: "Note Title",
+      demandOption: true,
+      type: "string",
+    },
+    body: {
+      describe: "Note Body",
+      demandOption: true,
+      type: "string",
+    },
+  },
+  handler: function (argv) {
+    notes.addNotes(argv.title, argv.body);
   },
 });
 
@@ -17,8 +29,15 @@ yargs.command({
 yargs.command({
   command: "remove",
   describe: "Remove a new note!",
-  handler: function () {
-    console.log("I removed a new command");
+  builder: {
+    title: {
+      describe: "Title to be removed",
+      demandOption: true,
+      type: "string",
+    },
+  },
+  handler: function (argv) {
+    notes.removeNote(argv.title);
   },
 });
 
@@ -27,7 +46,7 @@ yargs.command({
   command: "list",
   describe: "Listing notes!",
   handler: function () {
-    console.log("I Listed notes");
+    notes.listNotes();
   },
 });
 
@@ -35,20 +54,15 @@ yargs.command({
 yargs.command({
   command: "read",
   describe: "Read notes!",
-  handler: function () {
-    console.log("I read some new notes");
+  builder: {
+    title: {
+      describe: "Read a single note.",
+    },
+  },
+  handler: function (argv) {
+    notes.readNote(argv.title);
   },
 });
 
-console.log(yargs.argv);
-
-// fs.writeFileSync(
-//   "notes.txt",
-//   "This file is created by nodejs!!, developer -> Ritik Gupta"
-// );
-
-// fs.appendFileSync("notes.txt", " This text is appended using nodejs");
-
-// const str = getString();
-// console.log(str);
-// console.log(chalk.bold.red("Hello world!"));
+// yargs parses the argument according to our commands config
+yargs.parse();
