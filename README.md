@@ -17,6 +17,12 @@ The code in it is for any geek's :brain: refrence to take idea :bulb: or even fo
 * HTML
 * CSS
 
+## [NEXT-EVENTS-APP](https://github.com/RitikGupta19/MERN/tree/master/WhatsAppClone) 
+This is an simple web app made using reactjs and nextjs. Nextjs is used to try the page/file based routing, server side rendering, static generation for better SEO Management. App simple fetches data at the time of build and make static pages that can be pre-rendered for better crawling of site, as well as user experience.
+\
+<a href="https://reactjs.org/" title="React"><img src="https://github.com/tomchen/stack-icons/blob/master/logos/react.svg" alt="React" width="30px" height="30px"></a>
+<a href="https://nextjs.org/" title="Nextjs"><img src="https://github.com/tomchen/stack-icons/blob/master/logos/nextjs.svg" alt="Nextjs" width="30px" height="30px"></a>
+
 ## [WHATSAPP CLONE](https://github.com/RitikGupta19/MERN/tree/master/WhatsAppClone) 
 In progress , developing a chat application (WhatsApp Clone) using MERN stack.
 Authenticated using Firebase and use of Pusher for the near real-time experience with sending and receiving messages.\
