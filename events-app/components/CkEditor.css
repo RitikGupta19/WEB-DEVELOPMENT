@@ -1,0 +1,116 @@
+
+
+.ck-content >p,p>strong,p>span {
+    color: #1a202c;
+    font-family: 'Rubik', sans-serif;
+    margin-bottom:5px;
+    font-size: 17px;
+    line-height: 27px;
+}
+.ck-content >ul>li,li>strong,li>span{
+    color: #1a202c;
+    font-family: 'Rubik', sans-serif;
+    margin-bottom:5px;
+    font-size: 17px;
+    line-height: 27px;
+}
+.ck-content > h1, h1>strong, h1>span, h1>u, h1>i{
+    font-family: 'Bitter', serif;
+    color: #1a202c;
+    font-size:32px;
+    font-size: 500;
+    line-height: 32px;
+}
+
+.ck-content > h2, h2>strong, h2>span, h2>u, h2>i{
+    font-family: 'Bitter', serif;
+    color: #1a202c;
+    font-size:24px;
+    font-size: 500;
+    line-height: 32px;
+}
+.ck-content > h3, h3>strong, h3>span{
+    font-family: 'Bitter', serif;
+    color: #1a202c;
+    font-size:20px;
+    font-size: 400;
+    line-height: 32px;
+}
+/* ckeditor5-font/theme/fontsize.css */
+.ck-content .text-big{
+    font-size: 1.6em!important;
+    font-family: 'Bitter', serif;
+    font-weight:700 ;
+    line-height: 35px;
+}
+/* ckeditor5-font/theme/fontsize.css */
+.ck-content .text-huge {
+    font-size: 3em!important;
+    font-family: 'Bitter', serif;
+    font-weight:700 ;
+    line-height: 55px;
+}
+.ck-content code {
+    background-color: #f9f2f4;
+    padding: .15em;
+	border-radius: 2px;
+	color:#c7254e;
+}
+.ck-content pre {
+    padding: 1em;
+    color: white!important;
+    background:#282c34!important;
+    border: 1px solid hsl(0, 0%, 77%);
+    border-radius: 2px;
+    text-align: left;
+    direction: ltr;
+	tab-size: 4;
+	padding:20px;
+	border-radius:10px!important;
+    font-style: 14px;
+    min-width: 200px;
+}
+.ck-content pre code {
+    background: unset;
+    padding: 0;
+	border-radius: 0;
+	color: white!important;
+}
+.ck-content blockquote {
+    overflow: hidden;
+    margin-left: 0;
+    margin-right: 0;
+    font-style: italic;
+	background-color:#f5f5f5!important;
+	border-left: 5px solid rgb(204, 203, 255)!important;
+	border-radius: 5px;
+	color:#3d3d4e;
+	padding:15px;
+}
+/* inner tags */
+
+
+@media screen and (max-width: 750px){
+    .ck-editor__editable_inline{
+        padding:10px!important;
+    }
+    
+}
+
+/* chnages */
+
+.ck-content > h1>span>strong, h1>span>i,h1>span>i>strong{
+    font-family: 'Bitter', serif;
+}
+.ck-content > h2>span>strong, h2>span>i,h2>span>i>strong{
+    font-family: 'Bitter', serif;
+}
+.ck-content > h3>span>strong, h3>span>i,h3>span>i>strong{
+    font-family: 'Bitter', serif;
+}
+.ck-content .text-huge>strong ,.text-huge>i,.text-huge>i>strong {
+    font-family: 'Bitter', serif;
+}
+.ck-content .text-big>strong ,.text-big>i,.text-big>i>strong {
+    font-family: 'Bitter', serif;
+}
