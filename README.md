@@ -1,9 +1,10 @@
-# WEB DEVELOPEMENT (MERN STACK)
+# WEB DEVELOPEMENT
 Repository contains my projects developed using some of the latest and most trending technologies :fire: in the industry for WEB APPLICATION Development :computer:.
 The code in it is for any geek's :brain: refrence to take idea :bulb: or even for myself in future.
 
 ## TECHNOLOGIES AND TOOLS
 * ReactJS
+* NextJS
 * ExpressJS
 * NodeJs
 * MongoDB
